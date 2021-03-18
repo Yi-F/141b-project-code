@@ -143,7 +143,7 @@ server <- function(input, output) {
   output$table <- renderDataTable({
     df <- getData(input$brand, input$price, input$rating, input$tag, input$type)
     if(!is.data.frame(df)){
-      data.frame(id="no products found")
+      data.frame(id="no products found for this brand")
     }else{
       df %>% select(id, brand, name, price, rating, product_type)
     }
